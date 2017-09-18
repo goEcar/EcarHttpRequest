@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HttpRequestHelper.h"
+
+typedef NS_ENUM(NSInteger, HTTPREQUESTMETHOD)
+{
+    HTTP_POST,
+    HTTP_GET
+};
+
+typedef void(^RequestcompleteHander)(id resultValue, NSString *errorInfo);
+
+typedef void(^DownloadProgressBlock)(float downloadProgress);
+
+typedef void(^UploadProgressBlock)(float uploadProgress);
+
 
 @class EPHttpHeadBase;
 @interface EPHttpManager : NSObject
